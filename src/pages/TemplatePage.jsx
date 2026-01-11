@@ -491,10 +491,12 @@ const TemplatePage = ({ t, setToastMessage, setShowToast, isDark }) => {
                 bottom: 0,
                 background: "rgba(0,0,0,0.5)",
                 display: "flex",
-                alignItems: "center",
+                alignItems: "flex-start",
                 justifyContent: "center",
                 zIndex: 2000,
                 padding: "20px",
+                overflowY: "auto",
+                paddingTop: isMobile ? "40px" : "0",
               }}
               onClick={() => setShowAddModal(false)}
             >
@@ -507,6 +509,8 @@ const TemplatePage = ({ t, setToastMessage, setShowToast, isDark }) => {
                   maxWidth: "500px",
                   width: "100%",
                   border: `1px solid ${t.border}`,
+                  maxHeight: isMobile ? "85vh" : "auto",
+                  overflowY: "auto",
                 }}
               >
                 <h2
@@ -535,7 +539,9 @@ const TemplatePage = ({ t, setToastMessage, setShowToast, isDark }) => {
                   <div
                     style={{
                       display: "grid",
-                      gridTemplateColumns: isMobile ? "1fr" : "repeat(4, 1fr)",
+                      gridTemplateColumns: isMobile
+                        ? "repeat(3, 1fr)"
+                        : "repeat(4, 1fr)",
                       gap: "8px",
                     }}
                   >
