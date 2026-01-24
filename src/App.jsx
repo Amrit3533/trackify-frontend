@@ -132,10 +132,15 @@ const App = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    if (!isLoggedIn) {
+      setLoading(false);
+      return;
+    }
+
     API.get("/routine/dashboard")
       .then((res) => setDashboardData(res.data))
       .finally(() => setLoading(false));
-  }, []);
+  }, [isLoggedIn]);
 
   const renderPage = () => {
     if (!isLoggedIn) {
@@ -150,7 +155,6 @@ const App = () => {
     if (currentPage === "dashboard")
       return <DashboardPage t={t} isDark={isDark} setIsDark={setIsDark} />;
     if (currentPage === "reports") return <ReportsPage t={t} isDark={isDark} />;
-    // if (currentPage === "settings") return <SettingsPage t={t} />;
 
     if (currentPage === "execution")
       return (

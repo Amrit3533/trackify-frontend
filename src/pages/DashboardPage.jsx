@@ -38,29 +38,7 @@ const DashboardPage = ({ t, isDark }) => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-
-  // const weeklyData = [
-  //   { day: "Mon", consistency: 85 },
-  //   { day: "Tue", consistency: 78 },
-  //   { day: "Wed", consistency: 92 },
-  //   { day: "Thu", consistency: 88 },
-  //   { day: "Fri", consistency: 95 },
-  //   { day: "Sat", consistency: 72 },
-  //   { day: "Sun", consistency: 80 },
-  // ];
-
-  // const completionData = [
-  //   { day: "Mon", completed: 7, total: 10 },
-  //   { day: "Tue", completed: 8, total: 10 },
-  //   { day: "Wed", completed: 9, total: 10 },
-  //   { day: "Thu", completed: 8, total: 10 },
-  //   { day: "Fri", completed: 10, total: 10 },
-  //   { day: "Sat", completed: 6, total: 10 },
-  //   { day: "Sun", completed: 7, total: 10 },
-  // ];
-
-  // const maxConsistency = Math.max(...weeklyData.map((d) => d.consistency));
-  // const maxCompleted = Math.max(...completionData.map((d) => d.completed));
+  
   if (loading) {
     return (
       <div style={{ padding: isMobile ? "16px" : "32px" }}>
@@ -148,8 +126,8 @@ const DashboardPage = ({ t, isDark }) => {
                       ? "0 20px 40px rgba(160,90,255,0.3)"
                       : "0 20px 40px rgba(160,90,255,0.2)"
                     : isDark
-                    ? "0 4px 16px rgba(0,0,0,0.2)"
-                    : "0 4px 16px rgba(0,0,0,0.06)",
+                      ? "0 4px 16px rgba(0,0,0,0.2)"
+                      : "0 4px 16px rgba(0,0,0,0.06)",
               }}
             >
               <div
@@ -249,8 +227,8 @@ const DashboardPage = ({ t, isDark }) => {
                       ? "0 20px 40px rgba(254,148,150,0.3)"
                       : "0 20px 40px rgba(254,148,150,0.2)"
                     : isDark
-                    ? "0 4px 16px rgba(0,0,0,0.2)"
-                    : "0 4px 16px rgba(0,0,0,0.06)",
+                      ? "0 4px 16px rgba(0,0,0,0.2)"
+                      : "0 4px 16px rgba(0,0,0,0.06)",
               }}
             >
               <div
@@ -343,8 +321,8 @@ const DashboardPage = ({ t, isDark }) => {
                       ? "0 20px 40px rgba(27,207,180,0.3)"
                       : "0 20px 40px rgba(27,207,180,0.2)"
                     : isDark
-                    ? "0 4px 16px rgba(0,0,0,0.2)"
-                    : "0 4px 16px rgba(0,0,0,0.06)",
+                      ? "0 4px 16px rgba(0,0,0,0.2)"
+                      : "0 4px 16px rgba(0,0,0,0.06)",
               }}
             >
               <div
@@ -399,7 +377,7 @@ const DashboardPage = ({ t, isDark }) => {
                     <div>
                       {dashboard.bestDay
                         ? toLocalDate(
-                            dashboard.bestDay.date
+                            dashboard.bestDay.date,
                           ).toLocaleDateString("en-US", {
                             weekday: "long",
                           })
@@ -434,8 +412,8 @@ const DashboardPage = ({ t, isDark }) => {
                       ? "0 20px 40px rgba(245,158,11,0.3)"
                       : "0 20px 40px rgba(245,158,11,0.2)"
                     : isDark
-                    ? "0 4px 16px rgba(0,0,0,0.2)"
-                    : "0 4px 16px rgba(0,0,0,0.06)",
+                      ? "0 4px 16px rgba(0,0,0,0.2)"
+                      : "0 4px 16px rgba(0,0,0,0.06)",
               }}
             >
               <div
@@ -490,7 +468,7 @@ const DashboardPage = ({ t, isDark }) => {
                     <div>
                       {dashboard.worstDay
                         ? toLocalDate(
-                            dashboard.worstDay.date
+                            dashboard.worstDay.date,
                           ).toLocaleDateString("en-US", {
                             weekday: "long",
                           })
@@ -621,7 +599,7 @@ const DashboardPage = ({ t, isDark }) => {
                         } ${weeklyData
                           .map(
                             (d, i) =>
-                              `L ${50 + i * 80} ${170 - d.consistency * 1.4}`
+                              `L ${50 + i * 80} ${170 - d.consistency * 1.4}`,
                           )
                           .join(" ")} L ${
                           50 + (weeklyData.length - 1) * 80
@@ -636,7 +614,7 @@ const DashboardPage = ({ t, isDark }) => {
                         } ${weeklyData
                           .map(
                             (d, i) =>
-                              `L ${50 + i * 80} ${170 - d.consistency * 1.4}`
+                              `L ${50 + i * 80} ${170 - d.consistency * 1.4}`,
                           )
                           .join(" ")}`}
                         fill="none"

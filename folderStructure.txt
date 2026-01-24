@@ -1,0 +1,21 @@
+Trackify/
+├── backend/
+│   ├── config/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   ├── server.js
+│   └── package.json
+│
+├── frontend/
+│   ├── src/
+│   │   ├── pages/
+│   │   ├── components/
+│   │   ├── utils/
+│   │   └── api/
+│   ├── index.html
+│   ├── vite.config.js
+│   └── package.json
+│
+├── .gitignore
+└── README.md

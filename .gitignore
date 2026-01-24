@@ -29,9 +29,10 @@ Thumbs.db
 # VS Code
 # =========================
 .vscode/
-
+.gitignore
 # =========================
 # Misc
 # =========================
 *.log
 problems.txt
+# extra/trackify_complete_app.jsx

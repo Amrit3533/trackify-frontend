@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://trackify-backend-j8hd.onrender.com/api"
+  baseURL: import.meta.env.VITE_API_BASE_URL
+  // baseURL: "http://localhost:5000/api"
 });
 
 API.interceptors.request.use((req) => {

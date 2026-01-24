@@ -55,18 +55,14 @@ const HomePage = ({ t, isDark, handleLogin }) => {
 
     setLoading(true);
     try {
-      await API.post("/auth/register", {
+      const res = await API.post("/auth/register", {
         name,
         email,
         password,
       });
 
-      alert("Registered successfully. Please login.");
-
-      // ✅ move user to login tab
-      setActiveTab("login");
-
-      // ✅ clear sensitive fields
+      handleLogin(res.data);  
+      
       setFormData({
         name: "",
         email: "",
@@ -79,6 +75,7 @@ const HomePage = ({ t, isDark, handleLogin }) => {
       setLoading(false);
     }
   };
+
   useEffect(() => {
     if (activeTab === "login") {
       const rememberedEmail = localStorage.getItem("rememberedEmail");
