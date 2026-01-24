@@ -38,7 +38,7 @@ const DashboardPage = ({ t, isDark }) => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-  
+
   if (loading) {
     return (
       <div style={{ padding: isMobile ? "16px" : "32px" }}>
